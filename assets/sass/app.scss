@@ -1,0 +1,17 @@
+/*!
+ * Start Project DWStyle
+*/
+@import "compass/css3/user-interface";
+@import "compass/utilities/sprites";
+
+@import "_bootstrap/bootstrap";
+
+// Arquivos de apoio
+@import "_helpers/sprites";
+@import "_helpers/var";
+@import "_helpers/helpers";
+
+// Arquivos responsaveis pelo layout do site
+@import "_layout/desktop";
+@import "_layout/tablet";
+@import "_layout/mobile";

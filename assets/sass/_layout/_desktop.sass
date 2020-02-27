@@ -1,0 +1,123 @@
+html, body
+	font-family: 'Montserrat', sans-serif
+
+	// Link MENU //
+	a,a:visited
+		color: $light
+		transition: color 0.5s
+		&:hover
+			color: $primary-color
+		&:focus,&:active
+			color: $pink
+
+	// EFEITO BARRA PISCANDO //
+	.typeWriter
+		background: $primary-color
+		border-radius: 5px
+		padding: 1.5rem
+		font-size: 2rem
+		&::after
+			content: '|'
+			opacity: 1
+			margin-left: 5px
+			display: inline-block
+			animation: blink .7s infinite
+		@keyframes blink
+			0%, 100%
+				opacity: 1
+			50%
+				opacity: 0
+
+// Animação //
+[data-anime]
+	opacity: 0
+	transition: .2s
+[data-anime="left"]
+	transform: translate3d(-50px, 0, 0)
+[data-anime="right"]
+	transform: translate3d(50px, 0, 0)
+[data-anime="top"]
+	transform: translate3d(0, -50px, 0)
+[data-anime="footer"]
+	transform: translate3d(0, 50px, 0)
+[data-anime].animate
+	opacity: 1
+	transform: translate3d(0px, 0px, 0px)
+
+// HEADER //
+header.header
+	background: $gray
+	.menu
+		@extend %transparencia
+		display: flex
+		justify-content: space-between
+		align-items: center
+	img
+		@include size(100vw, 100vh)
+		object-fit: cover
+	.desenvolvimento-web
+		text-align: center
+		color: $white
+		position: absolute
+		transform: translate(-50%, -50%)
+		top: 50%
+		left: 50%
+	.svg-vantagens
+		@include size(100px)
+
+// MAIN //
+main.main
+	.capitular
+		p:first-of-type::first-letter
+			float: left
+			color: $primary-color
+			font-size: 4rem
+			line-height: 3rem
+			padding: 10px 10px 0px 0px
+	.parallax
+		width: 100%
+		background: url(../img/codigo-fonte.jpg) fixed
+		.svg-papper
+			width: 100%
+			margin-bottom: -2px
+			fill: $white
+	.progress-bar
+		@extend %gradient-background
+	.ms-slide
+		.parag
+			padding: 20px 5% 40px 5%
+			img
+				max-width: 100%
+				margin-bottom: 1rem
+			p
+				color: $gray-800
+				font-size: 0.6em
+				text-align: justify
+				margin: 0
+	.mapa
+		@include size(100vw, 40vh)
+	.contato
+		background: $gray
+		#validationTextarea
+			height: 200px
+		.box-info-contato
+			display: flex
+			color: $gray
+			svg
+				@include size(25px)
+				padding-top: 10px
+				fill: $primary-color
+			a
+				color: $gray-900
+				&:hover
+					color: $primary-color
+
+	#quemsou, #habilidades, #contato
+		height: 100vh
+		display: flex
+		align-items: center
+
+// FOOTER //
+footer.footer
+	background: $gray-900
+	color: $white

@@ -1,0 +1,23 @@
+// Mixin's
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+
+@mixin gradient-background
+  background: linear-gradient(to bottom,$purple,$cyan)
+
+// Placeholder's
+%transparencia
+  background: rgba($black,0.75)
+
+%gradient-background
+  background: linear-gradient(to right,$pink,$indigo,$cyan)
+
+%gradient-background-font
+  background: linear-gradient(to right,$pink,$indigo,$cyan)
+  -webkit-background-clip: text
+  -webkit-text-fill-color: transparent
+
+// Background Stelo
+// background: linear-gradient(to right,#50217f,#366895)
+// background: linear-gradient(to right,#2692b4,#04cba8)
